@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopLite</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">ShopLite</div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search Products...">
+        <i class="fas fa-search"></i>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="openLogin()">Login</button>
+        <button onclick="openRegister()">Register</button>
+
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount">0</span>
+        </div>
+    </div>
+</header>
+
+<!-- Offer Slider -->
+<section class="slider">
+    <div class="slides">
+        <div class="slide offer1">
+            <h2>🔥 Bumper Offer 50% OFF</h2>
+        </div>
+
+        <div class="slide offer2">
+            <h2>🎉 Buy 1 Get 1 Free</h2>
+        </div>
+
+        <div class="slide offer3">
+            <h2>⚡ Mega Sale Today</h2>
+        </div>
+    </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="productContainer">
+
+<div class="card">
+<img src="https://picsum.photos/300/250?1">
+
+<h3>Running Shoes</h3>
+<p>₹1999</p>
+
+<button onclick="showDetails('Running Shoes','Comfortable sports shoes','₹1999')">
+View Details
+</button>
+
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?2">
+
+<h3>Headphones</h3>
+<p>₹2499</p>
+
+<button onclick="showDetails('Headphones','Premium sound quality','₹2499')">
+View Details
+</button>
+
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Smart Watch</h3>
+<p>₹3999</p>
+
+<button onclick="showDetails('Smart Watch','Latest smart watch','₹3999')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Bag</h3>
+<p>₹2599</p>
+
+<button onclick="showDetails('Bag ','Branded lader bag','₹2599')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Shirt</h3>
+<p>₹999</p>
+
+<button onclick="showDetails('Shirt','Premium cotton shirt','₹999')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Apple Laptop</h3>
+<p>₹3999</p>
+
+<button onclick="showDetails('Apple Laptop','Latest Apple laptop','₹60999')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Jacket</h3>
+<p>₹1599</p>
+
+<button onclick="showDetails('Jacket','Premium Denim jacket','₹1599')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Smart Watch</h3>
+<p>₹3999</p>
+
+<button onclick="showDetails('Smart Watch','Latest smart watch','₹3999')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>LG TV</h3>
+<p>₹25000</p>
+
+<button onclick="showDetails('LG TV','Latest LG TV','₹25000')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Smart Phone</h3>
+<p>₹39999</p>
+
+<button onclick="showDetails('Smart Phone','Latest smart phone','₹39999')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?3">
+
+<h3>Smart Watch</h3>
+<p>₹3999</p>
+
+<button onclick="showDetails('Smart Watch','Latest smart watch','₹3999')">
+View Details
+</button>
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/250?4">
+
+<h3>T-Shirt</h3>
+<p>₹699</p>
+
+<button onclick="showDetails('T-Shirt','Premium cotton t-shirt','₹699')">
+View Details
+</button>
+
+<button onclick="addCart()">
+Add To Cart
+</button>
+</div>
+
+</section>
+
+<!-- Product Popup -->
+<div class="popup" id="popup">
+<div class="popup-content">
+<span onclick="closePopup()">✖</span>
+
+<h2 id="pname"></h2>
+<p id="pdesc"></p>
+<h3 id="pprice"></h3>
+</div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+<div class="form-box">
+<h2>Login</h2>
+
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button>Login</button>
+<button onclick="closeLogin()">Close</button>
+</div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal" id="registerModal">
+<div class="form-box">
+<h2>Register</h2>
+
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button>Register</button>
+<button onclick="closeRegister()">Close</button>
+</div>
+</div>
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>ShopLite</h3>
+            <p>Your trusted online shopping destination with the best deals and quality products. </p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+
+            <p>📍 Address:</p>
+            <p>Vijay Nagar, Indore , Madhya Pradesh, India</p>
+
+            <p>📞 Phone:</p>
+            <p>+91 8305456789</p>
+
+            <p>✉ Email:</p>
+            <p>support@shoplite.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Offers</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 ShopLite | Thank you for shopping with us !
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
